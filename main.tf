@@ -1,4 +1,4 @@
 resource "aws_instance" "Ubuntu-22-04" {
-  ami           = "ami-08c1d360ff0d39882"
+  ami           = "ami-0ffe6a92e2553e8a8"
   instance_type = var.instance_type
 }
