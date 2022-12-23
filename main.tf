@@ -3,22 +3,16 @@ data "aws_ami" "app_ami" {
 
   filter {
     name   = "name"
-    values = ["bitnami-tomcat-*-x86_64-hvm-ebs-nami"]
+    values = ["ami-08c1d360ff0d39882"]
   }
 
   filter {
     name   = "virtualization-type"
     values = ["hvm"]
   }
-
-  owners = ["979382823631"] # Bitnami
 }
 
-resource "aws_instance" "blog" {
+resource "aws_instance" "Ubuntu-22-04" {
   ami           = data.aws_ami.app_ami.id
   instance_type = var.instance_type
-
-  tags = {
-    Name = "HelloWorld"
-  }
 }
